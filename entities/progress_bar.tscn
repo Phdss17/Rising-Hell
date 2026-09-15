@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bhyh0hpcs0b0e"]
+
+[ext_resource type="Script" uid="uid://dr1qniji3kaoq" path="res://scripts/progress_bar.gd" id="1_82lrc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rggde"]
+bg_color = Color(0.10249352, 0.10249352, 0.10249352, 0.9411765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ja270"]
+bg_color = Color(0.5860447, 0.08328619, 0.10932586, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="lifeBar" type="ProgressBar" unique_id=1222235533]
+offset_right = 10.0
+offset_bottom = 106.91302
+rotation = -1.5694809
+theme_override_styles/background = SubResource("StyleBoxFlat_rggde")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ja270")
+max_value = 35.0
+value = 35.0
+fill_mode = 2
+show_percentage = false
+script = ExtResource("1_82lrc")
+
+[node name="Label" type="Label" parent="." unique_id=458803516]
+modulate = Color(0.99798506, 0.97940654, 0.975452, 1)
+layout_mode = 0
+offset_left = 16.999987
+offset_top = -0.022362318
+offset_right = 169.99998
+offset_bottom = 22.977638
+rotation = 1.5696526
+scale = Vector2(0.30616707, 0.32944646)
+text = "The One Who Seeks"

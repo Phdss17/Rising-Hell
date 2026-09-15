@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcfgu1fnufeqx"
+path="res://.godot/imported/bala 2.mp3-d3ff3536ed51a352b75f1c0432bc1627.mp3str"
+
+[deps]
+
+source_file="res://sounds/bala 2.mp3"
+dest_files=["res://.godot/imported/bala 2.mp3-d3ff3536ed51a352b75f1c0432bc1627.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

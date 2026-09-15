@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://byyyp4put5hup"]
+
+[ext_resource type="Script" uid="uid://b2gi601ev82pt" path="res://scripts/bala.gd" id="1_8c1ah"]
+[ext_resource type="Texture2D" uid="uid://dqpgsro6iu8mw" path="res://sprites/bala.png" id="2_tx18p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ja270"]
+radius = 6.0
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaxw8"]
+atlas = ExtResource("2_tx18p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3dns"]
+atlas = ExtResource("2_tx18p")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1puo"]
+atlas = ExtResource("2_tx18p")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r6pg"]
+atlas = ExtResource("2_tx18p")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xt5f"]
+atlas = ExtResource("2_tx18p")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6toc"]
+atlas = ExtResource("2_tx18p")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rggde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaxw8")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3dns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1puo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r6pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xt5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6toc")
+}],
+"loop": 0,
+"name": &"hiddet",
+"speed": 20.0
+}]
+
+[node name="bala" type="Area2D" unique_id=1479441099]
+z_index = 5
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_8c1ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1213425898]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CapsuleShape2D_ja270")
+debug_color = Color(0.07016479, 0, 0.5311358, 0.42000002)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=601849186]
+position = Vector2(2, -3)
+rect = Rect2(-8, -3, 12, 12)
+
+[node name="break" type="AnimatedSprite2D" parent="." unique_id=1282993222]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_rggde")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

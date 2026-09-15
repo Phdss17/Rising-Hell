@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://scj1yfiqvras"]
+
+[ext_resource type="Texture2D" uid="uid://bnglk8iw8cx7a" path="res://sprites/revolver-Sheet.png" id="1_emyvl"]
+[ext_resource type="Script" uid="uid://bbdls656kwtki" path="res://scripts/gun.gd" id="1_psnrh"]
+[ext_resource type="AudioStream" uid="uid://bulvrgmuw3t7o" path="res://sounds/bala 3.mp3" id="3_an1ol"]
+[ext_resource type="AudioStream" uid="uid://c3fogrbbcdgo3" path="res://sounds/impacto.mp3" id="4_5rgjm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psnrh"]
+atlas = ExtResource("1_emyvl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an1ol"]
+atlas = ExtResource("1_emyvl")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rgjm"]
+atlas = ExtResource("1_emyvl")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gidx"]
+atlas = ExtResource("1_emyvl")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7xyc"]
+atlas = ExtResource("1_emyvl")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfreb"]
+atlas = ExtResource("1_emyvl")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rggde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psnrh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an1ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rgjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gidx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7xyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfreb")
+}],
+"loop": 0,
+"name": &"shooting",
+"speed": 15.0
+}]
+
+[node name="gun" type="Node2D" unique_id=1678297897 groups=["gun"]]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_psnrh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1991672029]
+sprite_frames = SubResource("SpriteFrames_rggde")
+animation = &"shooting"
+autoplay = "default"
+offset = Vector2(4, -3)
+
+[node name="pivot" type="Marker2D" parent="." unique_id=1245008133]
+position = Vector2(14.666666, -4.6666665)
+
+[node name="bala" type="AudioStreamPlayer2D" parent="." unique_id=1911288233]
+stream = ExtResource("3_an1ol")
+
+[node name="impacto" type="AudioStreamPlayer2D" parent="." unique_id=745309244]
+stream = ExtResource("4_5rgjm")
