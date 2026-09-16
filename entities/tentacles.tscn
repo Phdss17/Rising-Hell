@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://dsaho44x22e70"]
+
+[ext_resource type="Texture2D" uid="uid://bw1serq1k5tgx" path="res://sprites/tentacool-Sheet.png" id="1_u6sf1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvtd1"]
+atlas = ExtResource("1_u6sf1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6rps"]
+atlas = ExtResource("1_u6sf1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuq3w"]
+atlas = ExtResource("1_u6sf1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kup2v"]
+atlas = ExtResource("1_u6sf1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og6jo"]
+atlas = ExtResource("1_u6sf1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxact"]
+atlas = ExtResource("1_u6sf1")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u08x7"]
+atlas = ExtResource("1_u6sf1")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80pfi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvtd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6rps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuq3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kup2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og6jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxact")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u08x7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.5
+}]
+
+[node name="tentacles" type="Node2D" unique_id=1371050725]
+
+[node name="uLs" type="AnimatedSprite2D" parent="." unique_id=1567866926]
+modulate = Color(0.16047262, 0.16047262, 0.16047262, 1)
+position = Vector2(-14.647663, -67.38929)
+rotation = -0.43633235
+scale = Vector2(1.9999999, 1.9999999)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+
+[node name="uL" type="AnimatedSprite2D" parent="." unique_id=1213959879]
+position = Vector2(-37, -68)
+rotation = -0.43633235
+scale = Vector2(1.9999999, 1.9999999)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+
+[node name="dLs" type="AnimatedSprite2D" parent="." unique_id=1760014859]
+modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
+position = Vector2(-14.647661, 67.38929)
+rotation = -2.7052603
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+flip_h = true
+
+[node name="dL" type="AnimatedSprite2D" parent="." unique_id=1922412598]
+position = Vector2(-37, 68)
+rotation = -2.7052603
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+flip_h = true
+
+[node name="mLs" type="AnimatedSprite2D" parent="." unique_id=674280412]
+modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
+position = Vector2(-65, 20)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+flip_h = true
+
+[node name="mL" type="AnimatedSprite2D" parent="." unique_id=1656114922]
+position = Vector2(-75, 0)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+flip_h = true
+
+[node name="uRs" type="AnimatedSprite2D" parent="." unique_id=1528257807]
+modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
+position = Vector2(50.89997, -50.48456)
+rotation = -2.7052603
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+flip_v = true
+
+[node name="uR" type="AnimatedSprite2D" parent="." unique_id=2044193815]
+position = Vector2(37, -68)
+rotation = -2.7052603
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+flip_v = true
+
+[node name="dRs" type="AnimatedSprite2D" parent="." unique_id=461262715]
+modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
+position = Vector2(47, 50)
+rotation = 2.7052603
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+
+[node name="dR" type="AnimatedSprite2D" parent="." unique_id=630622322]
+position = Vector2(37, 68)
+rotation = 2.7052603
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+
+[node name="mRs" type="AnimatedSprite2D" parent="." unique_id=778398070]
+modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
+position = Vector2(75, 20)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"
+
+[node name="mR" type="AnimatedSprite2D" parent="." unique_id=2124224928]
+position = Vector2(75, 0)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_80pfi")
+autoplay = "default"

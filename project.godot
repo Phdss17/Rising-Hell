@@ -29,6 +29,9 @@ window/stretch/aspect="expand"
 
 gun=""
 boss="bosses"
+attacks=""
+eye=""
+player=""
 
 [input]
 

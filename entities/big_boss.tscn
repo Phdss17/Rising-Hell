@@ -4,132 +4,13 @@
 [ext_resource type="AudioStream" uid="uid://fpgf2twxuoop" path="res://sounds/inimigo falando.mp3" id="2_dr8la"]
 [ext_resource type="Texture2D" uid="uid://c5owlc7yod7kc" path="res://sprites/shadowBoss.png" id="2_pxn7p"]
 [ext_resource type="AudioStream" uid="uid://3vejd35521lh" path="res://sounds/inimigo levando dano.mp3" id="3_th6c8"]
-[ext_resource type="Texture2D" uid="uid://bw1serq1k5tgx" path="res://sprites/tentacool-Sheet.png" id="3_vk60n"]
-[ext_resource type="Texture2D" uid="uid://cd6ehn5o5jfrk" path="res://sprites/eye.png" id="4_hgy2e"]
+[ext_resource type="PackedScene" uid="uid://dsaho44x22e70" path="res://entities/tentacles.tscn" id="3_vk60n"]
 [ext_resource type="AudioStream" uid="uid://d2cnfr2cbwim1" path="res://sounds/vitoria.mp3" id="5_nvji2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rvtd1"]
-atlas = ExtResource("3_vk60n")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y6rps"]
-atlas = ExtResource("3_vk60n")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kuq3w"]
-atlas = ExtResource("3_vk60n")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kup2v"]
-atlas = ExtResource("3_vk60n")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_og6jo"]
-atlas = ExtResource("3_vk60n")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxact"]
-atlas = ExtResource("3_vk60n")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u08x7"]
-atlas = ExtResource("3_vk60n")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vk60n"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rvtd1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y6rps")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kuq3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kup2v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_og6jo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nxact")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u08x7")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 7.5
-}]
+[ext_resource type="PackedScene" uid="uid://cbc8ma7axyggb" path="res://entities/eye.tscn" id="6_vk60n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_owito"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4o8i8"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hgy2e"]
-atlas = ExtResource("4_hgy2e")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nvji2"]
-atlas = ExtResource("4_hgy2e")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pxn7p"]
-atlas = ExtResource("4_hgy2e")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vk60n"]
-atlas = ExtResource("4_hgy2e")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jued1"]
-atlas = ExtResource("4_hgy2e")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rtq0c"]
-atlas = ExtResource("4_hgy2e")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_my3tx"]
-atlas = ExtResource("4_hgy2e")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rggde"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hgy2e")
-}],
-"loop": 0,
-"name": &"dead",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_nvji2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pxn7p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vk60n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jued1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rtq0c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_my3tx")
-}],
-"loop": 1,
-"name": &"idle",
-"speed": 5.0
-}]
 
 [node name="bigBoss" type="CharacterBody2D" unique_id=1905123877 groups=["boss"]]
 script = ExtResource("1_g1tud")
@@ -139,101 +20,7 @@ position = Vector2(4, 4)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_pxn7p")
 
-[node name="uLs" type="AnimatedSprite2D" parent="." unique_id=1926643345]
-modulate = Color(0.16047262, 0.16047262, 0.16047262, 1)
-position = Vector2(-14.647663, -67.38929)
-rotation = -0.43633235
-scale = Vector2(1.9999999, 1.9999999)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-
-[node name="uL" type="AnimatedSprite2D" parent="." unique_id=372710523]
-position = Vector2(-37, -68)
-rotation = -0.43633235
-scale = Vector2(1.9999999, 1.9999999)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-
-[node name="dLs" type="AnimatedSprite2D" parent="." unique_id=717400733]
-modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
-position = Vector2(-14.647661, 67.38929)
-rotation = -2.7052603
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-flip_h = true
-
-[node name="dL" type="AnimatedSprite2D" parent="." unique_id=484659770]
-position = Vector2(-37, 68)
-rotation = -2.7052603
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-flip_h = true
-
-[node name="mLs" type="AnimatedSprite2D" parent="." unique_id=815985313]
-modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
-position = Vector2(-65, 20)
-rotation = -1.5707964
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-flip_h = true
-
-[node name="mL" type="AnimatedSprite2D" parent="." unique_id=2105862867]
-position = Vector2(-75, 0)
-rotation = -1.5707964
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-flip_h = true
-
-[node name="uRs" type="AnimatedSprite2D" parent="." unique_id=1191635464]
-modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
-position = Vector2(50.89997, -50.48456)
-rotation = -2.7052603
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-flip_v = true
-
-[node name="uR" type="AnimatedSprite2D" parent="." unique_id=187627317]
-position = Vector2(37, -68)
-rotation = -2.7052603
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-flip_v = true
-
-[node name="dRs" type="AnimatedSprite2D" parent="." unique_id=1462278843]
-modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
-position = Vector2(47, 50)
-rotation = 2.7052603
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-
-[node name="dR" type="AnimatedSprite2D" parent="." unique_id=1602913281]
-position = Vector2(37, 68)
-rotation = 2.7052603
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-
-[node name="mRs" type="AnimatedSprite2D" parent="." unique_id=1477549178]
-modulate = Color(0.19394687, 0.19394687, 0.19394687, 1)
-position = Vector2(75, 20)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
-
-[node name="mR" type="AnimatedSprite2D" parent="." unique_id=1906559893]
-position = Vector2(75, 0)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_vk60n")
-autoplay = "default"
+[node name="tentacles" parent="." unique_id=1434548893 instance=ExtResource("3_vk60n")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=865999854]
 scale = Vector2(5.2, 5.2)
@@ -242,7 +29,7 @@ debug_color = Color(0.975447, 0.1587843, 0, 0.41960785)
 
 [node name="fala" type="AudioStreamPlayer2D" parent="." unique_id=1676409289]
 stream = ExtResource("2_dr8la")
-volume_db = 4.0
+volume_db = -5.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=580643622]
 
@@ -251,23 +38,19 @@ scale = Vector2(5.2, 5.2)
 shape = SubResource("CircleShape2D_4o8i8")
 debug_color = Color(0.975447, 0.1587843, 0, 0.41960785)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D" unique_id=1885726198]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D/AudioStreamPlayer2D" unique_id=1193878943]
-
 [node name="hit" type="AudioStreamPlayer2D" parent="." unique_id=1951742157]
 stream = ExtResource("3_th6c8")
-volume_db = 4.0
+volume_db = -5.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1458859402]
-scale = Vector2(1.6, 1.6)
-sprite_frames = SubResource("SpriteFrames_rggde")
-animation = &"idle"
-autoplay = "idle"
+[node name="eye" parent="." unique_id=1131740764 instance=ExtResource("6_vk60n")]
+scale = Vector2(1.65, 1.65)
 
 [node name="vitoria" type="AudioStreamPlayer2D" parent="." unique_id=777926520]
 stream = ExtResource("5_nvji2")
 
 [node name="Timer" type="Timer" parent="." unique_id=1813409327]
+wait_time = 4.0
+autostart = true
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
