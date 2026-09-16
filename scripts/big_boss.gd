@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var hits = 35
+var hits = 1
 @onready var hit = $hit
 @onready var fala = $fala
 @onready var hitbox = $Area2D
@@ -17,6 +17,8 @@ var shake := 0
 const maxShake := 8
 var cooldown := 0.0
 var pupilDis = 15
+
+var isDead := false
 
 func _ready() -> void:
 	player = get_tree().get_nodes_in_group("player")[0]
@@ -49,13 +51,13 @@ func receiveDamage() -> void:
 		tween.tween_property(eye, "modulate", Color.WHITE, 0.1)
 		shake = maxShake
 	else:
+		isDead = true
 		palpebra.play("die")
 		for tentacle in tentacles:
 			tentacle.stop()
 		hitbox.queue_free()
 		vitoria.play()
 		await vitoria.finished
-		get_tree().quit()
 	
 func sounds() -> void:
 	var bi = randi() % 4
@@ -66,15 +68,17 @@ func sounds() -> void:
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if cooldown <= 0:
-		cooldown = 0.3
+		cooldown = 0.0
 		receiveDamage()
 
 func _on_timer_timeout() -> void:
-	palpebra.play("blinking")
-	await palpebra.animation_finished
-	palpebra.play("idle")
+	if !isDead:
+		palpebra.play("blinking")
+		await palpebra.animation_finished
+		palpebra.play("idle")
 
 func lookAtYou() -> void:
-	var player = pivot.global_position.direction_to(player.position)
-	pupila.global_position = pivot.global_position + player * pupilDis
+	if !isDead:
+		var player = pivot.global_position.direction_to(player.position)
+		pupila.global_position = pivot.global_position + player * pupilDis
 	
