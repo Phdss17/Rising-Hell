@@ -111,7 +111,7 @@ pattern_2 = SubResource("TileMapPattern_qvc4m")
 [node name="roomTst" type="Node" unique_id=1372045039]
 
 [node name="char" parent="." unique_id=995157558 instance=ExtResource("1_88gup")]
-position = Vector2(242, 610)
+position = Vector2(235, 230)
 scale = Vector2(0.8, 0.8)
 
 [node name="bigBoss" parent="." unique_id=1905123877 instance=ExtResource("2_ffxv4")]
@@ -133,7 +133,4 @@ tile_set = SubResource("TileSet_bn1i7")
 position = Vector2(240, 612)
 
 [node name="life" parent="." unique_id=1216343715 instance=ExtResource("9_ybpoa")]
-offset_left = 175.0
-offset_top = 255.0
-offset_right = 320.0
-offset_bottom = 271.0
+position = Vector2(167, 253)

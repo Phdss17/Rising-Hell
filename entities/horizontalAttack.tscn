@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bj8ypt4jx3lco" path="res://scripts/horizontal.gd" id="1_am1a2"]
 [ext_resource type="Texture2D" uid="uid://bpu225ceqw8ga" path="res://sprites/tentacool_corre-Sheet.png" id="2_am1a2"]
+[ext_resource type="Texture2D" uid="uid://cjobsofh6yjdr" path="res://sprites/tentacool_surgindoSheet.png" id="3_hwkcd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwkcd"]
 atlas = ExtResource("2_am1a2")
@@ -14,6 +15,30 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pupps"]
 atlas = ExtResource("2_am1a2")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxwug"]
+atlas = ExtResource("3_hwkcd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caajb"]
+atlas = ExtResource("3_hwkcd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px1cc"]
+atlas = ExtResource("3_hwkcd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g66b0"]
+atlas = ExtResource("3_hwkcd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ccd6"]
+atlas = ExtResource("3_hwkcd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enkel"]
+atlas = ExtResource("3_hwkcd")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rggde"]
 animations = [{
@@ -28,22 +53,55 @@ animations = [{
 "texture": SubResource("AtlasTexture_pupps")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"chasing",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxwug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caajb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px1cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g66b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ccd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enkel")
+}],
+"loop": 0,
+"name": &"spawning",
+"speed": 24.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sho68"]
 size = Vector2(9.5, 26.5)
 
 [node name="horizontalAttack" type="Area2D" unique_id=949929778 groups=["attacks"]]
+z_index = -1
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
 script = ExtResource("1_am1a2")
 
+[node name="shadow" type="AnimatedSprite2D" parent="." unique_id=1906816393]
+modulate = Color(0.13897057, 0.13897057, 0.13897057, 1)
+position = Vector2(5, 0)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_rggde")
+animation = &"chasing"
+autoplay = "chasing"
+offset = Vector2(0, -12)
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=131312937]
 sprite_frames = SubResource("SpriteFrames_rggde")
-autoplay = "default"
-frame_progress = 0.33279037
+animation = &"spawning"
+autoplay = "spawning"
 offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1577978844]

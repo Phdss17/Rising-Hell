@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	gun.global_position = pivot.global_position + mouse * gunDis
 	gun.show_behind_parent = mouse.y < 0
 	
-	if Input.is_action_just_pressed("quit"):
+	if Input.is_action_just_pressed("quit") or hits <= 0:
 		get_tree().quit()
 	
 func getMoves():
@@ -48,5 +48,5 @@ func move(delta):
 		velocity = Vector2.ZERO
 	move_and_slide()
 
-func _on_hit_box_area_entered(area: Area2D) -> void:
+func _on_hit_box_area_entered(_area: Area2D) -> void:
 	damage()

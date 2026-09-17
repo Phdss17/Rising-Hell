@@ -1,24 +1,35 @@
 [gd_scene format=3 uid="uid://bhyh0hpcs0b0e"]
 
 [ext_resource type="Texture2D" uid="uid://quts7jdma4gv" path="res://sprites/back.png" id="1_agyjs"]
+[ext_resource type="Texture2D" uid="uid://dv5ihqj8l1vpw" path="res://sprites/fillWhite.png" id="2_3otn3"]
 [ext_resource type="Texture2D" uid="uid://6rnfmugt274l" path="res://sprites/molde.png" id="2_j4558"]
 [ext_resource type="Texture2D" uid="uid://jb5cq2w4yx15" path="res://sprites/fill.png" id="3_3otn3"]
 
-[node name="life" type="TextureProgressBar" unique_id=1216343715 groups=["lifeBar"]]
-offset_left = 197.0
-offset_top = 251.0
-offset_right = 342.0
-offset_bottom = 267.0
+[node name="progressBar" type="Node2D" unique_id=84682256]
+
+[node name="lifeBack" type="TextureProgressBar" parent="." unique_id=1677763754 groups=["lifeBar"]]
+offset_right = 145.0
+offset_bottom = 16.0
 max_value = 35.0
 value = 35.0
 nine_patch_stretch = true
 stretch_margin_left = 8
 stretch_margin_right = 8
 texture_under = ExtResource("1_agyjs")
+texture_progress = ExtResource("2_3otn3")
+
+[node name="lifeFront" type="TextureProgressBar" parent="." unique_id=1216343715 groups=["lifeBar"]]
+offset_right = 145.0
+offset_bottom = 16.0
+max_value = 35.0
+value = 35.0
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_right = 8
 texture_over = ExtResource("2_j4558")
 texture_progress = ExtResource("3_3otn3")
 
-[node name="Label" type="Label" parent="." unique_id=458803516]
+[node name="Label" type="Label" parent="lifeFront" unique_id=458803516]
 modulate = Color(0.99798506, 0.97940654, 0.975452, 1)
 layout_mode = 0
 offset_left = 4.0
