@@ -1,5 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-build/*.exe
-build/*.exe
+build/risingHell_*.exe
