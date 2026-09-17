@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Damageable
 
 #movimentacao
 const SPEED = 10000.0
@@ -47,4 +47,6 @@ func move(delta):
 		sprite.play("idle")
 		velocity = Vector2.ZERO
 	move_and_slide()
-		
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	damage()

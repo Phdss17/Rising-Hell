@@ -39,7 +39,7 @@ func shoot():
 	
 func can_Shoot() -> bool:
 	var tempoAtual = Time.get_unix_time_from_system()
-	if ultimaBala + 0.1 <= tempoAtual or ultimaBala == 0:
+	if ultimaBala + 0.4 <= tempoAtual or ultimaBala == 0:
 		return true
 	else:
 		return false

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://clcf70xpbyivh"]
+
+[ext_resource type="Script" uid="uid://bj8ypt4jx3lco" path="res://scripts/horizontal.gd" id="1_am1a2"]
+[ext_resource type="Texture2D" uid="uid://bpu225ceqw8ga" path="res://sprites/tentacool_corre-Sheet.png" id="2_am1a2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwkcd"]
+atlas = ExtResource("2_am1a2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu46t"]
+atlas = ExtResource("2_am1a2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pupps"]
+atlas = ExtResource("2_am1a2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rggde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwkcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu46t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pupps")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sho68"]
+size = Vector2(9.5, 26.5)
+
+[node name="horizontalAttack" type="Area2D" unique_id=949929778 groups=["attacks"]]
+scale = Vector2(1.5, 1.5)
+collision_layer = 2
+script = ExtResource("1_am1a2")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=131312937]
+sprite_frames = SubResource("SpriteFrames_rggde")
+autoplay = "default"
+frame_progress = 0.33279037
+offset = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1577978844]
+position = Vector2(-2, -10)
+shape = SubResource("RectangleShape2D_sho68")

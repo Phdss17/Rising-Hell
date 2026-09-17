@@ -1,6 +1,7 @@
-extends CharacterBody2D
+extends Damageable
 
-var hits = 1
+var player: CharacterBody2D
+
 @onready var hit = $hit
 @onready var fala = $fala
 @onready var hitbox = $Area2D
@@ -11,16 +12,25 @@ var hits = 1
 var palpebra: AnimatedSprite2D
 var pupila: Sprite2D
 @onready var pivot: Marker2D
-var player: CharacterBody2D
 
-var shake := 0
+var shaking := 0
 const maxShake := 8
 var cooldown := 0.0
 var pupilDis = 15
 
 var isDead := false
+@onready var life : TextureProgressBar
+
+const horAttack := preload("res://entities/horizontalAttack.tscn")
+const attackDisY := 60
+const attackX := 442
+const numberAttacks := 3
 
 func _ready() -> void:
+	life = get_tree().get_nodes_in_group("lifeBar")[0]
+	life.visible = false
+	hits = 35
+	tweens = 1
 	player = get_tree().get_nodes_in_group("player")[0]
 	tentacles = get_child(1).get_children()
 	eye = get_tree().get_nodes_in_group("eye")[0]
@@ -31,25 +41,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	lookAtYou()
 	cooldown -= delta
-	if shake > 0:
-		if shake >= 1 and shake <= 2:
-			position += Vector2(2, -0.5)
-		elif shake >= 2 and shake <= 4:
-			position -= Vector2(2, -0.5)
-		elif shake >= 4 and shake <= 6:
-			position += Vector2(2, 0.5)
-		elif shake >= 6 and shake <= 8:
-			position -= Vector2(2, 0.5)
-		shake -= 1
+	shake()
 	
 func receiveDamage() -> void:
 	if hits > 0:
-		hits -= 1
+		damage()
 		sounds()
-		var tween = create_tween()
-		tween.tween_property(eye, "modulate", Color(4, 4, 4), 0.05)
-		tween.tween_property(eye, "modulate", Color.WHITE, 0.1)
-		shake = maxShake
+		shaking = maxShake
 	else:
 		isDead = true
 		palpebra.play("die")
@@ -68,7 +66,7 @@ func sounds() -> void:
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if cooldown <= 0:
-		cooldown = 0.0
+		cooldown = 0.3
 		receiveDamage()
 
 func _on_timer_timeout() -> void:
@@ -76,9 +74,33 @@ func _on_timer_timeout() -> void:
 		palpebra.play("blinking")
 		await palpebra.animation_finished
 		palpebra.play("idle")
+		attack()
 
 func lookAtYou() -> void:
 	if !isDead:
-		var player = pivot.global_position.direction_to(player.position)
-		pupila.global_position = pivot.global_position + player * pupilDis
+		var playerPos = pivot.global_position.direction_to(player.position)
+		pupila.global_position = pivot.global_position + playerPos * pupilDis
 	
+func shake():
+	if shaking > 0:
+		if shaking >= 1 and shaking <= 2:
+			position += Vector2(2, -0.5)
+		elif shaking >= 2 and shaking <= 4:
+			position -= Vector2(2, -0.5)
+		elif shaking >= 4 and shaking <= 6:
+			position += Vector2(2, 0.5)
+		elif shaking >= 6 and shaking <= 8:
+			position -= Vector2(2, 0.5)
+		shaking -= 1
+		
+func attack():
+	var i := player.global_position.y
+	for n in range(numberAttacks):
+		var hor = horAttack.instantiate()
+		hor.global_position = Vector2(attackX, i) 
+		get_tree().root.add_child(hor)
+		i -= attackDisY
+
+
+func _on_visible_on_screen_enabler_2d_screen_entered() -> void:
+	life.visible = true

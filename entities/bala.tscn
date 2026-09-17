@@ -65,6 +65,8 @@ animations = [{
 [node name="bala" type="Area2D" unique_id=1479441099]
 z_index = 5
 scale = Vector2(0.8, 0.8)
+collision_layer = 4
+collision_mask = 18
 script = ExtResource("1_8c1ah")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1213425898]
@@ -73,6 +75,7 @@ shape = SubResource("CapsuleShape2D_ja270")
 debug_color = Color(0.07016479, 0, 0.5311358, 0.42000002)
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=601849186]
+light_mask = 0
 position = Vector2(2, -3)
 rect = Rect2(-8, -3, 12, 12)
 

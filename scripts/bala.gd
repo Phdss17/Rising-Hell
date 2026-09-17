@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 200
+var speed = 250
 var direction: Vector2
 @onready var borked = $break
 var shouldMove = true

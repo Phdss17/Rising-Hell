@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b65opjni05hkd"]
+
+[ext_resource type="Script" uid="uid://dpxg6lnsoydvo" path="res://scripts/damageble.gd" id="1_1tppj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rggde"]
+radius = 0.0
+height = 2.0
+
+[node name="damageble" type="CharacterBody2D" unique_id=621357725]
+script = ExtResource("1_1tppj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1363952144]
+shape = SubResource("CapsuleShape2D_rggde")
