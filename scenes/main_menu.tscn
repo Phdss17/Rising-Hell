@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b7wk67bopc20"]
+
+[ext_resource type="Texture2D" uid="uid://b3aiwku4ijlhy" path="res://assets/risinghellbuttomless.png" id="1_8gkfw"]
+[ext_resource type="Script" uid="uid://c22e4qlwc4gkb" path="res://scripts/main_menu.gd" id="1_sa1k4"]
+[ext_resource type="Texture2D" uid="uid://cnnomq6ardix7" path="res://assets/start.png" id="2_sa1k4"]
+[ext_resource type="Texture2D" uid="uid://bpwk71mymngsx" path="res://assets/quit.png" id="3_njjoo"]
+
+[node name="mainMenu" type="Control" unique_id=870730625]
+custom_minimum_size = Vector2(480, 270)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sa1k4")
+
+[node name="bg" type="TextureRect" parent="." unique_id=478173036]
+custom_minimum_size = Vector2(480, 270)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8gkfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1430102752]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 140.0
+offset_right = 413.0
+offset_bottom = 215.0
+
+[node name="start" type="TextureButton" parent="VBoxContainer" unique_id=420467827]
+layout_mode = 2
+offset_transform_enabled = true
+texture_normal = ExtResource("2_sa1k4")
+
+[node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=1762842925]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(10, 0)
+offset_transform_scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_njjoo")
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

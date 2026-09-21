@@ -23,8 +23,11 @@ func _physics_process(delta: float) -> void:
 	gun.global_position = pivot.global_position + mouse * gunDis
 	gun.show_behind_parent = mouse.y < 0
 	
-	if Input.is_action_just_pressed("quit") or hits <= 0:
-		get_tree().quit()
+	if Input.is_action_just_pressed("quit"):
+		get_tree().change_scene_to_file("res://scenes/pause_menu.tscn")
+	if hits <= 0:
+		
+		get_tree().change_scene_to_file("res://scenes/death_menu.tscn")
 	
 func getMoves():
 	lR = Input.get_axis("left", "right")

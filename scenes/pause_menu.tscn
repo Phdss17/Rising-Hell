@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dbo30mnnifr8s"]
+
+[ext_resource type="Script" uid="uid://c2omqls43tto3" path="res://scripts/pause_menu.gd" id="1_5d2l8"]
+[ext_resource type="Texture2D" uid="uid://cqyybg74ldh5r" path="res://assets/jogo_pausado.png" id="1_kukqi"]
+[ext_resource type="Texture2D" uid="uid://cnnomq6ardix7" path="res://assets/start.png" id="2_5d2l8"]
+[ext_resource type="Texture2D" uid="uid://bpwk71mymngsx" path="res://assets/quit.png" id="3_7l7mv"]
+
+[node name="pauseMenu" type="Control" unique_id=456638286]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5d2l8")
+
+[node name="bg" type="TextureRect" parent="." unique_id=390250598]
+custom_minimum_size = Vector2(480, 270)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kukqi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=464604132]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 168.0
+offset_right = 191.0
+offset_bottom = 243.0
+
+[node name="start" type="TextureButton" parent="VBoxContainer" unique_id=1119843726]
+layout_mode = 2
+offset_transform_enabled = true
+texture_normal = ExtResource("2_5d2l8")
+
+[node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=287532187]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(10, 0)
+offset_transform_scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_7l7mv")
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

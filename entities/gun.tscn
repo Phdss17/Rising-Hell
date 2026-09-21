@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bnglk8iw8cx7a" path="res://sprites/revolver-Sheet.png" id="1_emyvl"]
 [ext_resource type="Script" uid="uid://bbdls656kwtki" path="res://scripts/gun.gd" id="1_psnrh"]
-[ext_resource type="AudioStream" uid="uid://bulvrgmuw3t7o" path="res://sounds/bala 3.mp3" id="3_an1ol"]
-[ext_resource type="AudioStream" uid="uid://c3fogrbbcdgo3" path="res://sounds/impacto.mp3" id="4_5rgjm"]
+[ext_resource type="AudioStream" uid="uid://kki6k3v3wjxo" path="res://sounds/bala 2.ogg" id="3_5rgjm"]
+[ext_resource type="AudioStream" uid="uid://bfcd44otvvj0s" path="res://sounds/impacto.ogg" id="4_0gidx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_psnrh"]
 atlas = ExtResource("1_emyvl")
@@ -74,7 +74,7 @@ offset = Vector2(4, -3)
 position = Vector2(14.666666, -4.6666665)
 
 [node name="bala" type="AudioStreamPlayer2D" parent="." unique_id=1911288233]
-stream = ExtResource("3_an1ol")
+stream = ExtResource("3_5rgjm")
 
 [node name="impacto" type="AudioStreamPlayer2D" parent="." unique_id=745309244]
-stream = ExtResource("4_5rgjm")
+stream = ExtResource("4_0gidx")

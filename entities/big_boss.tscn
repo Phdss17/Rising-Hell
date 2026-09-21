@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://bkdnj304jgbf7"]
 
 [ext_resource type="Script" uid="uid://dx143c3sa3wkj" path="res://scripts/big_boss.gd" id="1_g1tud"]
-[ext_resource type="AudioStream" uid="uid://fpgf2twxuoop" path="res://sounds/inimigo falando.mp3" id="2_dr8la"]
 [ext_resource type="Texture2D" uid="uid://c5owlc7yod7kc" path="res://sprites/shadowBoss.png" id="2_pxn7p"]
-[ext_resource type="AudioStream" uid="uid://3vejd35521lh" path="res://sounds/inimigo levando dano.mp3" id="3_th6c8"]
 [ext_resource type="PackedScene" uid="uid://dsaho44x22e70" path="res://entities/tentacles.tscn" id="3_vk60n"]
-[ext_resource type="AudioStream" uid="uid://d2cnfr2cbwim1" path="res://sounds/vitoria.mp3" id="5_nvji2"]
+[ext_resource type="AudioStream" uid="uid://lgwblny8q256" path="res://sounds/inimigo falando.ogg" id="4_vk60n"]
+[ext_resource type="AudioStream" uid="uid://b0wnrjhewx5bv" path="res://sounds/inimigo levando dano.ogg" id="5_jued1"]
 [ext_resource type="PackedScene" uid="uid://cbc8ma7axyggb" path="res://entities/eye.tscn" id="6_vk60n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_owito"]
@@ -30,7 +29,7 @@ shape = SubResource("CircleShape2D_owito")
 debug_color = Color(0.975447, 0.1587843, 0, 0.41960785)
 
 [node name="fala" type="AudioStreamPlayer2D" parent="." unique_id=1676409289]
-stream = ExtResource("2_dr8la")
+stream = ExtResource("4_vk60n")
 volume_db = -5.0
 
 [node name="hitBox" type="Area2D" parent="." unique_id=580643622]
@@ -43,14 +42,11 @@ shape = SubResource("CircleShape2D_4o8i8")
 debug_color = Color(0.975447, 0.1587843, 0, 0.41960785)
 
 [node name="hit" type="AudioStreamPlayer2D" parent="." unique_id=1951742157]
-stream = ExtResource("3_th6c8")
+stream = ExtResource("5_jued1")
 volume_db = -5.0
 
 [node name="eye" parent="." unique_id=1131740764 instance=ExtResource("6_vk60n")]
 scale = Vector2(1.65, 1.65)
-
-[node name="vitoria" type="AudioStreamPlayer2D" parent="." unique_id=777926520]
-stream = ExtResource("5_nvji2")
 
 [node name="Timer" type="Timer" parent="." unique_id=1813409327]
 wait_time = 4.0

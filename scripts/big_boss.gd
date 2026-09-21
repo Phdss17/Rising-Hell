@@ -32,7 +32,7 @@ func _ready() -> void:
 	getNodes()
 	frontBar.visible = false
 	backBar.visible = false
-	hits = 35
+	hits = 50
 	tweens = 1
 	palpebra = eye.get_child(2)
 	pupila = eye.get_child(1)
@@ -57,8 +57,8 @@ func receiveDamage() -> void:
 		for tentacle in tentacles:
 			tentacle.stop()
 		hitbox.queue_free()
-		vitoria.play()
-		await vitoria.finished
+		await palpebra.animation_finished
+		get_tree().change_scene_to_file("res://scenes/win_menu.tscn")
 	
 func sounds() -> void:
 	var bi = randi() % 4
@@ -77,7 +77,7 @@ func _on_timer_timeout() -> void:
 		palpebra.play("blinking")
 		await palpebra.animation_finished
 		palpebra.play("idle")
-	sideAttack()
+		sideAttack()
 
 func lookAtYou() -> void:
 	if !isDead:
@@ -119,7 +119,11 @@ func decide() -> int:
 	
 func _on_visible_on_screen_enabler_2d_screen_entered() -> void:
 	frontBar.visible = true
+	frontBar.max_value = hits
+	frontBar.value = hits
 	backBar.visible = true
+	backBar.max_value = hits
+	backBar.value = hits
 
 func getNodes():
 	backBar = get_tree().get_nodes_in_group("lifeBar")[0]

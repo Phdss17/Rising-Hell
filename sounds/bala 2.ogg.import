@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://kki6k3v3wjxo"
+path="res://.godot/imported/bala 2.ogg-dbc5e755be33a652924a342f6bff949f.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/bala 2.ogg"
+dest_files=["res://.godot/imported/bala 2.ogg-dbc5e755be33a652924a342f6bff949f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

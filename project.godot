@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="raisingHell"
-run/main_scene="uid://42e1ics8boa"
+run/main_scene="uid://b7wk67bopc20"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://sprites/icon/icon.png"
@@ -83,6 +83,8 @@ shoot={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.10616546, 0.010284929, 0.010284155, 1)
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true

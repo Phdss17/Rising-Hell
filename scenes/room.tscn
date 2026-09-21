@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bw7r412u3b6j0" path="res://entities/char.tscn" id="1_88gup"]
 [ext_resource type="PackedScene" uid="uid://bkdnj304jgbf7" path="res://entities/big_boss.tscn" id="2_ffxv4"]
-[ext_resource type="AudioStream" uid="uid://dk8po7ae5tm0m" path="res://sounds/BOSTA2.mp3" id="3_7dqbv"]
+[ext_resource type="AudioStream" uid="uid://diyprfahs55hi" path="res://sounds/BOSTA2.ogg" id="3_7dqbv"]
 [ext_resource type="Texture2D" uid="uid://bryenp6t744ul" path="res://sprites/floorSheet.png" id="4_jn645"]
 [ext_resource type="Texture2D" uid="uid://ctt3kaby08005" path="res://sprites/wallSheet.png" id="5_qvc4m"]
 [ext_resource type="Texture2D" uid="uid://dp7wl8cfpabh2" path="res://sprites/door.png" id="6_7dqbv"]
@@ -111,14 +111,14 @@ pattern_2 = SubResource("TileMapPattern_qvc4m")
 [node name="roomTst" type="Node" unique_id=1372045039]
 
 [node name="char" parent="." unique_id=995157558 instance=ExtResource("1_88gup")]
-position = Vector2(235, 230)
+position = Vector2(246, 597)
 scale = Vector2(0.8, 0.8)
 
 [node name="bigBoss" parent="." unique_id=1905123877 instance=ExtResource("2_ffxv4")]
 position = Vector2(242, 70)
 scale = Vector2(0.7, 0.7)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1252522489]
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1252522489]
 stream = ExtResource("3_7dqbv")
 volume_db = -15.0
 autoplay = true
@@ -131,6 +131,7 @@ tile_set = SubResource("TileSet_bn1i7")
 
 [node name="Camera" parent="." unique_id=1762343962 instance=ExtResource("7_qvc4m")]
 position = Vector2(240, 612)
+limit_right = 488
 
-[node name="life" parent="." unique_id=1216343715 instance=ExtResource("9_ybpoa")]
+[node name="lifeB" parent="." unique_id=1216343715 instance=ExtResource("9_ybpoa")]
 position = Vector2(167, 253)

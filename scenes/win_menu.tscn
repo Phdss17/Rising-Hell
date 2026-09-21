@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dg7xky33vh16r"]
+
+[ext_resource type="Texture2D" uid="uid://beg7ff5e74g0c" path="res://assets/vitoria.png" id="1_7shsi"]
+[ext_resource type="Script" uid="uid://ce4kywb4ijqy3" path="res://scripts/win_menu.gd" id="1_dmaew"]
+[ext_resource type="Texture2D" uid="uid://cnnomq6ardix7" path="res://assets/start.png" id="2_dmaew"]
+[ext_resource type="Texture2D" uid="uid://bpwk71mymngsx" path="res://assets/quit.png" id="3_ah3fa"]
+[ext_resource type="AudioStream" uid="uid://c66qfqk2u6fub" path="res://sounds/vitoria.ogg" id="5_ah3fa"]
+
+[node name="winMenu" type="Control" unique_id=1174467127]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dmaew")
+
+[node name="bg" type="TextureRect" parent="." unique_id=1882800878]
+custom_minimum_size = Vector2(480, 270)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_7shsi")
+
+[node name="start" type="TextureButton" parent="." unique_id=1040784836]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 154.0
+offset_right = 417.0
+offset_bottom = 191.0
+offset_transform_enabled = true
+texture_normal = ExtResource("2_dmaew")
+
+[node name="quit" type="TextureButton" parent="." unique_id=63653534]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 193.0
+offset_right = 418.0
+offset_bottom = 223.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(10, 0)
+offset_transform_scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_ah3fa")
+
+[node name="vitoria" type="AudioStreamPlayer2D" parent="." unique_id=1464699480]
+stream = ExtResource("5_ah3fa")
+autoplay = true
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
